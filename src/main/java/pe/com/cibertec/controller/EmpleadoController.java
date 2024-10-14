@@ -17,7 +17,7 @@ public class EmpleadoController {
     private EmpleadoService empleadoService;
 
     // Listar todos los empleados
-    @GetMapping("/empleado")
+    @GetMapping("/")
     public String listarEmpleados(Model model) {
         List<EmpleadoEntity> listaEmpleados = empleadoService.listarEmpleados();
         model.addAttribute("listaEmp", listaEmpleados);

@@ -1,4 +1,4 @@
-package pe.com.cibertec.serviceImpl;
+package pe.com.cibertec.service.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import pe.com.cibertec.service.EmpleadoService;
 
 @Service
 public class EmpleadoServiceImpl implements EmpleadoService {
-    
+
     @Autowired
     private EmpleadoRepository empleadoRepository;
 
@@ -20,7 +20,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
     @Override
     public EmpleadoEntity obtenerEmpleadoPorDni(String dni) {
-        return empleadoRepository.findById(dni).orElse(null);
+        return empleadoRepository.findByDniEmpleado(dni);
     }
 
     @Override

@@ -35,7 +35,7 @@ public class EmpleadoEntity {
     private String apellido_empleado;
     
     @Column(name = "fecha_nacimiento", nullable = false)
-    private Date fecha_nacimiento;
+    private String fecha_nacimiento;
     
     @Column(name = "direccion", nullable = false, length = 45)
     private String direccion;

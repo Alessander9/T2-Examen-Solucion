@@ -1,11 +1,7 @@
 package pe.com.cibertec.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 import pe.com.cibertec.model.AreaEntity;
 
-
-@Repository
-public interface AreaRepository extends JpaRepository<AreaRepository, Integer>{
-
+public interface AreaRepository extends JpaRepository<AreaEntity, Long> {
 }
