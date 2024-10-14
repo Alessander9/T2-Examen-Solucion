@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Empleado</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Detalles del Empleado</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" th:text="'Nombre: ' + ${empleado.nombre_empleado}"></h5>
+                <p class="card-text" th:text="'DNI: ' + ${empleado.dni_empleado}"></p>
+                <p class="card-text" th:text="'Apellido: ' + ${empleado.apellido_empleado}"></p>
+                <p class="card-text" th:text="'Fecha de Nacimiento: ' + ${empleado.fecha_nacimiento}"></p>
+                <p class="card-text" th:text="'Dirección: ' + ${empleado.direccion}"></p>
+                <p class="card-text" th:text="'Correo: ' + ${empleado.correo}"></p>
+                <a th:href="@{/empleado/}" class="btn btn-secondary">Volver</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

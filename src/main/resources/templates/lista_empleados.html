@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Empleados</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Lista de Empleados</h2>
+        <a th:href="@{/empleado/registrar}" class="btn btn-primary">Registrar Nuevo Empleado</a>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Dirección</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="empleado : ${listaEmp}">
+                    <td th:text="${empleado.dni_empleado}"></td>
+                    <td th:text="${empleado.nombre_empleado}"></td>
+                    <td th:text="${empleado.apellido_empleado}"></td>
+                    <td th:text="${empleado.fecha_nacimiento}"></td>
+                    <td th:text="${empleado.direccion}"></td>
+                    <td th:text="${empleado.correo}"></td>
+                    <td>
+                        <a th:href="@{/empleado/actualizar/{dni}(dni=${empleado.dni_empleado})}" class="btn btn-warning">Actualizar</a>
+                        <a th:href="@{/empleado/eliminar/{dni}(dni=${empleado.dni_empleado})}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar?');">Eliminar</a>
+                        <a th:href="@{/empleado/buscar/{dni}(dni=${empleado.dni_empleado})}" class="btn btn-info">Detalles</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

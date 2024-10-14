@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar Empleado</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Actualizar Empleado</h2>
+        <form th:action="@{/empleado/actualizar/{dni}(dni=${empleado.dni_empleado})}" th:object="${empleado}" method="post">
+            <div class="form-group">
+                <label>DNI:</label>
+                <input type="text" class="form-control" th:field="*{dni_empleado}" disabled>
+            </div>
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" class="form-control" th:field="*{nombre_empleado}" required>
+            </div>
+            <div class="form-group">
+                <label>Apellido:</label>
+                <input type="text" class="form-control" th:field="*{apellido_empleado}" required>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" th:field="*{fecha_nacimiento}" required>
+            </div>
+            <div class="form-group">
+                <label>Dirección:</label>
+                <input type="text" class="form-control" th:field="*{direccion}" required>
+            </div>
+            <div class="form-group">
+                <label>Correo:</label>
+                <input type="email" class="form-control" th:field="*{correo}" required>
+            </div>
+            <button type="submit" class="btn btn-warning">Actualizar</button>
+            <a th:href="@{/empleado/}" class="btn btn-secondary">Volver</a>
+        </form>
+    </div>
+</body>
+</html>
